@@ -1,0 +1,39 @@
+{
+    "name": "cord/settings",
+    "description": "Create and edit settings for your admin control panel within a web interface",
+    "license": "MIT",
+    "keywords": [
+        "cord",
+        "cordpanel",
+        "settings",
+        "config",
+        "backpack",
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Cord Panel",
+            "email": "support@cordpanel.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "php": ">=7.1.3",
+      "cord/base": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cord\\Settings\\": "src"
+        }
+    },
+    "extra": {
+      "laravel": {
+          "providers": [
+              "Cord\\Settings\\SettingServiceProvider"
+          ],
+          "aliases": {
+              "Settings": "Cord\\Settings\\SettingServiceProvider"
+          }
+      }
+    }
+}
