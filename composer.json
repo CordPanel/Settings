@@ -19,7 +19,6 @@
     "minimum-stability": "dev",
     "require": {
       "php": ">=7.1.3",
-      "cord/base": "dev-master"
     },
     "autoload": {
         "psr-4": {
