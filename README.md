@@ -42,13 +42,13 @@ Add it to the menu or access it by its routes:
 - System Config Files: **application/admin/setting/system**
 
 ## Credits
-[Abby Janke][link-author]
-[All Contributors][link-contributors]
+- [Abby Janke](link-author)
+- [All Contributors](link-contributors)
 
 ## Some Code Used From These Repositories
 Great thanks to these amazing developers who helped make this possible:
-[Laravel-Backpack/Settings][https://github.com/Laravel-Backpack/Settings] (For developing base settings for application specific settings)
-[Ideatica/config-writer][https://github.com/Ideatica/config-writer] (For extending config repository making it editable)
+- [Laravel-Backpack/Settings](Laravel-Backpack/Settings) (For developing base settings for application specific settings)
+- [Ideatica/config-writer](Ideatica/config-writer) (For extending config repository making it editable)
 
 ## License
 
