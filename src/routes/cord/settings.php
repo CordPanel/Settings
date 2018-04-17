@@ -16,15 +16,5 @@ Route::group([
     Route::get('setting/system', 'SystemConfigController@index');
     Route::get('setting/system/search/{file}', 'SystemConfigController@search');
 
-    CRUD::resource('setting', 'SettingCrudController');
-
-
-    Route::get('config', function() {
-
-      $config = new Cord\Settings\Repository('backpack.base'); // loading the config from config/app.php
-      $config->set('developer_name', 'Cord Panel'); // set the config you wish
-      $config->save(); // save those settings to the config file once done editing
-
-      dd($config->get('developer_name'));
-    });
+    CRUD::resource('setting/app', 'SettingCrudController');
 });

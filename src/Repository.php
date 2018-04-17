@@ -4,7 +4,7 @@ namespace Cord\Settings;
 
 /**
  * Original Code From Ideatica/config-writer
- * Modified for Backpack/Crud by Abby Janke (abbyjanke/settings)
+ * Minor Modifications By Abby Janke for CordPanel/Settings
  */
 
 use Illuminate\Config\Repository as BaseRepository;

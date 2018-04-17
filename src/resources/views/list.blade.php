@@ -65,7 +65,7 @@
                 </div>
                 @endforeach
 
-                @if(!$canUpdate)
+                @if($canUpdate)
                   <input type="submit" class="btn btn-primary m-t-15 pull-right" value="Save Settings" />
                 @endif
               </div>

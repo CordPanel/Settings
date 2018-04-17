@@ -5,6 +5,8 @@ namespace Cord\Settings;
 use Config;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
+use Cord\Settings\app\Models\Setting;
 use Route;
 
 class SettingsServiceProvider extends ServiceProvider
@@ -46,6 +48,20 @@ class SettingsServiceProvider extends ServiceProvider
         $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/cord')], 'lang');
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'cord');
 
+        // only use the Settings package if the Settings table is present in the database
+        if (!\App::runningInConsole() && count(Schema::getColumnListing('settings'))) {
+            // get all settings from the database
+            $settings = Setting::all();
+            // bind all settings to the Laravel config, so you can call them like
+            // Config::get('settings.contact_email')
+            foreach ($settings as $key => $setting) {
+                Config::set('settings.'.$setting->key, $setting->value);
+            }
+        }
+
+        // publish migrations
+        $this->publishes([__DIR__.'/database/migrations/' => database_path('migrations')], 'migrations');
+
         // publish views
         $this->publishes([__DIR__.'/resources/views' => resource_path('views/vendor/cord/settings')], 'views');
 
@@ -86,5 +102,6 @@ class SettingsServiceProvider extends ServiceProvider
 
         // register their aliases
         $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+        $loader->alias('Setting', \Cord\Settings\app\Http\Models\Setting::class);
     }
 }
