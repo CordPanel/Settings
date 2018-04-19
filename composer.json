@@ -19,7 +19,7 @@
     "minimum-stability": "dev",
     "require": {
       "php": ">=7.1.3",
-      "backpack/crud": "^3.4",
+      "backpack/crud": "^3.4"
     },
     "autoload": {
         "psr-4": {
