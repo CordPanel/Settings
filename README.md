@@ -26,11 +26,11 @@ php artisan migrate
 ```
 <!-- Settings -->
 <li class="treeview">
-  <a href="#"><i class="fa fa-toggle-on"></i> <span>System</span> <i class="fa fa-angle-left pull-right"></i></a>
-  <ul class="treeview-menu">
-    <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/setting/app') }}"><i class="fa fa-gear"></i> <span>App Settings</span></a></li>
-    <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/setting/system') }}"><i class="fa fa-file"></i> <span>System Config Files</span></a></li>
-  </ul>
+    <a href="#"><i class="fa fa-gears"></i> <span>{{ ucfirst(trans('cord::settings.setting_plural')) }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <ul class="treeview-menu">
+      <li><a href="{{ backpack_url('setting/app') }}"><i class="fa fa-wrench"></i> <span> {{ ucwords(trans('cord::settings.app').' '.trans('cord::settings.setting_plural')) }}</span></a></li>
+      <li><a href="{{ backpack_url('setting/system') }}"><i class="fa fa-gear"></i> {{ ucwords(trans('cord::settings.system').' '.trans('cord::settings.setting_plural')) }}<span></span></a></li>
+    </ul>
 </li>
 ```
 
