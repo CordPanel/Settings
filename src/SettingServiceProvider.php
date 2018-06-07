@@ -46,7 +46,11 @@ class SettingsServiceProvider extends ServiceProvider
         // publish translation files
         // publish lang files
         $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/cord')], 'lang');
-        $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'cord');
+        
+        // Check if Cord\Clients was installed, if so don't load translation path.
+        if(!class_exists('Cord\Clients\ClientsServiceProvider')) {
+          $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'cord');
+        }
 
         // only use the Settings package if the Settings table is present in the database
         if (!\App::runningInConsole() && count(Schema::getColumnListing('settings'))) {
