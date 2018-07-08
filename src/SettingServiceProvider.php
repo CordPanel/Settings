@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Schema;
 use Cord\Settings\app\Models\Setting;
 use Route;
 
-class SettingsServiceProvider extends ServiceProvider
+class SettingServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.

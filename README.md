@@ -13,12 +13,12 @@ composer require cord/settings
 
 2. For Laravel <5.5 apps, add the service provider to your config/app.php file:
 ```
-Cord\Settings\SettingsServiceProvider::class,
+Cord\Settings\SettingServiceProvider::class,
 ```
 
 3. Publish files and run the migration.
 ```
-php artisan vendor:publish --provider="Cord\Settings\SettingsServiceProvider"
+php artisan vendor:publish --provider="Cord\Settings\SettingServiceProvider"
 php artisan migrate
 ```
 
